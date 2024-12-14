@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Report Generation</title>
+</head>
+<body>
+    <header>
+        <h1>Report Generation</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="recipe.html">Manage Recipes</a></li>
+                <li><a href="ingredient_recipe.html">Manage Ingredients</a></li>
+                <li><a href="event.html">Manage Events</a></li>
+                <li><a href="spoilage.html">Track Spoilage</a></li>
+                <li><a href="intertransfer.html">Manage Intertransfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Generate Reports</h2>
+            <form id="report-form" class="card">
+                <label for="report-type">Select Report Type:</label>
+                <select id="report-type" name="report-type">
+                    <option value="sales">Sales Report</option>
+                    <option value="inventory">Inventory Report</option>
+                    <option value="spoilage">Spoilage Report</option>
+                </select>
+                <label for="start-date">Start Date:</label>
+                <input type="date" id="start-date" name="start-date" required>
+                <label for="end-date">End Date:</label>
+                <input type="date" id="end-date" name="end-date" required>
+                <button type="submit">Generate Report</button>
+            </form>
+        </section>
+    </main>
+    <div id="notification" class="notification hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>

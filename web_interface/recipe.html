@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Recipe Management</title>
+</head>
+<body>
+    <header>
+        <h1>Recipe Management</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="report.html">Generate Reports</a></li>
+                <li><a href="ingredient_recipe.html">Manage Ingredients</a></li>
+                <li><a href="event.html">Manage Events</a></li>
+                <li><a href="spoilage.html">Track Spoilage</a></li>
+                <li><a href="intertransfer.html">Manage Intertransfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Create New Recipe</h2>
+            <form id="recipe-form" class="card">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipe-name" required>
+                <label for="menu-description">Menu Description:</label>
+                <textarea id="menu-description" name="menu-description" required></textarea>
+                <label for="portions">Number of Portions:</label>
+                <input type="number" id="portions" name="portions" required>
+                <button type="submit">Save Recipe</button>
+            </form>
+        </section>
+        <section class="container">
+            <h2>Existing Recipes</h2>
+            <div id="existing-recipes">
+                <!-- Existing recipes will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <div id="notification" class="notification hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>

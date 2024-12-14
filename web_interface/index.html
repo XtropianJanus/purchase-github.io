@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Welcome to the Direct Purchase System</title>
+    <style>
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .image-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Direct Purchase System</h1>
+        <nav>
+            <ul>
+                <li><a href="ingredient_recipe.html">Manage Ingredients</a></li>
+                <li><a href="recipe.html">Manage Recipes</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="event.html">Manage Events</a></li>
+                <li><a href="report.html">Generate Reports</a></li>
+                <li><a href="spoilage.html">Track Spoilage</a></li>
+                <li><a href="intertransfer.html">Manage Intertransfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Welcome to the Direct Purchase System</h1>
+            <div class="cta-container">
+                <a href="ingredient_recipe.html" class="cta-button">Get Started</a>
+            </div>
+        </section>
+        <section class="image-grid">
+            <div class="image-item">
+                <a href="ingredient_recipe.html">
+                    <img src="ingredient.jpg" alt="Manage Ingredients">
+                    <h3>Manage Ingredients</h3>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="recipe.html">
+                    <img src="recipe.jpg" alt="Manage Recipes">
+                    <h3>Manage Recipes</h3>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="purchase.html">
+                    <img src="purchase.jpg" alt="Manage Purchases">
+                    <h3>Manage Purchases</h3>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="event.html">
+                    <img src="event.jpg" alt="Manage Events">
+                    <h3>Manage Events</h3>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="report.html">
+                    <img src="report.jpg" alt="Generate Reports">
+                    <h3>Generate Reports</h3>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="spoilage.html">
+                    <img src="spoilage.jpg" alt="Track Spoilage">
+                    <h3>Track Spoilage</h3>
+                </a>
+            </div>
+            <div class="image-item">
+                <a href="intertransfer.html">
+                    <img src="chef5.jpg" alt="Manage Intertransfers">
+                    <h3>Manage Intertransfers</h3>
+                </a>
+            </div>
+        </section>
+        <section class="profit-loss">
+            <h2>Profit and Loss Tracker</h2>
+            <form id="profit-loss-form">
+                <label for="income">Total Income:</label>
+                <input type="number" id="income" placeholder="Enter total income" required>
+                <label for="expenses">Total Expenses:</label>
+                <input type="number" id="expenses" placeholder="Enter total expenses" required>
+                <button type="submit">Calculate</button>
+            </form>
+            <div id="result"></div>
+        </section>
+        <form id="data-form">
+            <label for="user-input">Enter some information:</label>
+            <input type="text" id="user-input" placeholder="Type something..." required>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result2"></div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Direct Purchase System. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('data-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            const userInput = document.getElementById('user-input').value;
+            localStorage.setItem('userInput', userInput); // Save input to local storage
+            document.getElementById('result2').innerText = 'Saved: ' + userInput; // Display saved input
+        });
+
+        // Load saved input on page load
+        window.onload = function() {
+            const savedInput = localStorage.getItem('userInput');
+            if (savedInput) {
+                document.getElementById('result2').innerText = 'Previously Saved: ' + savedInput;
+            }
+        };
+
+        document.getElementById('profit-loss-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            const income = parseFloat(document.getElementById('income').value);
+            const expenses = parseFloat(document.getElementById('expenses').value);
+            const profitLoss = income - expenses;
+            let message;
+            if (profitLoss > 0) {
+                message = 'Profit: $' + profitLoss.toFixed(2);
+            } else if (profitLoss < 0) {
+                message = 'Loss: $' + Math.abs(profitLoss).toFixed(2);
+            } else {
+                message = 'Break-even: $0.00';
+            }
+            document.getElementById('result').innerText = message;
+        });
+    </script>
+</body>
+</html>

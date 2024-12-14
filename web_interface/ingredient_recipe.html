@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ingredient and Recipe Management</title>
+</head>
+<body>
+    <header>
+        <h1>Ingredient and Recipe Management</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="report.html">Generate Reports</a></li>
+                <li><a href="recipe.html">Manage Recipes</a></li>
+                <li><a href="event.html">Manage Events</a></li>
+                <li><a href="spoilage.html">Track Spoilage</a></li>
+                <li><a href="intertransfer.html">Manage Intertransfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Select Ingredient</h2>
+            <input type="text" id="search-ingredient" placeholder="Search for ingredients..." />
+            <form id="ingredient-form" class="card">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="meat">Meat</option>
+                    <option value="vegetable">Vegetable</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="grain">Grain</option>
+                    <option value="spice">Spice</option>
+                    <!-- Add more categories as needed -->
+                </select>
+                <label for="ingredient">Choose an ingredient:</label>
+                <select id="ingredient" name="ingredient">
+                    <option value="bacon">Raw Bacon</option>
+                    <option value="chicken">Raw Chicken</option>
+                    <option value="beef">Raw Beef</option>
+                    <!-- Add more ingredients as needed -->
+                </select>
+                <label for="quantity">Quantity (grams):</label>
+                <input type="number" id="quantity" name="quantity" required>
+                <label for="supplier">Supplier:</label>
+                <input type="text" id="supplier" name="supplier" required>
+                <label for="price">Price per kilo:</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+                <button type="submit">Add Ingredient</button>
+            </form>
+            <div id="added-ingredients">
+                <h3>Added Ingredients</h3>
+                <div id="ingredients-list">
+                    <!-- Ingredients will be added here dynamically -->
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <h2>Create Recipe</h2>
+            <form id="recipe-form" class="card">
+                <label for="recipe-name">Recipe Name:</label>
+                <input type="text" id="recipe-name" name="recipe-name" required>
+                <label for="menu-description">Menu Description:</label>
+                <textarea id="menu-description" name="menu-description" required></textarea>
+                <label for="portions">Number of Portions:</label>
+                <input type="number" id="portions" name="portions" required>
+                <button type="submit">Save Recipe</button>
+            </form>
+        </section>
+    </main>
+    <div id="notification" class="notification hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>

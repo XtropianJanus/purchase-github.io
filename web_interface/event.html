@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Event Management</title>
+</head>
+<body>
+    <header>
+        <h1>Event Management</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="recipe.html">Manage Recipes</a></li>
+                <li><a href="ingredient_recipe.html">Manage Ingredients</a></li>
+                <li><a href="report.html">Generate Reports</a></li>
+                <li><a href="spoilage.html">Track Spoilage</a></li>
+                <li><a href="intertransfer.html">Manage Intertransfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Create New Event</h2>
+            <form id="event-form" class="card">
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" name="event-name" required>
+                <label for="event-date">Event Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+                <label for="event-location">Location:</label>
+                <input type="text" id="event-location" name="event-location" required>
+                <label for="event-description">Description:</label>
+                <textarea id="event-description" name="event-description" required></textarea>
+                <button type="submit">Save Event</button>
+            </form>
+        </section>
+        <section class="container">
+            <h2>Upcoming Events</h2>
+            <div id="upcoming-events">
+                <!-- Upcoming events will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <div id="notification" class="notification hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Manage Intertransfers</title>
+</head>
+<body>
+    <header>
+        <h1>Manage Intertransfers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="report.html">Generate Reports</a></li>
+                <li><a href="recipe.html">Manage Recipes</a></li>
+                <li><a href="event.html">Manage Events</a></li>
+                <li><a href="spoilage.html">Track Spoilage</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Transfer an Item</h2>
+        <form id="intertransfer-form">
+            <label for="item-id">Item ID:</label>
+            <input type="text" id="item-id" name="item-id" required>
+            <label for="from-location">From Location:</label>
+            <input type="text" id="from-location" name="from-location" required>
+            <label for="to-location">To Location:</label>
+            <input type="text" id="to-location" name="to-location" required>
+            <button type="submit">Transfer Item</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Spoilage Tracking</title>
+</head>
+<body>
+    <header>
+        <h1>Spoilage Tracking</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="purchase.html">Manage Purchases</a></li>
+                <li><a href="recipe.html">Manage Recipes</a></li>
+                <li><a href="ingredient_recipe.html">Manage Ingredients</a></li>
+                <li><a href="report.html">Generate Reports</a></li>
+                <li><a href="event.html">Manage Events</a></li>
+                <li><a href="intertransfer.html">Manage Intertransfers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Track Spoilage</h2>
+            <form id="spoilage-form" class="card">
+                <label for="ingredient-name">Ingredient Name:</label>
+                <input type="text" id="ingredient-name" name="ingredient-name" required>
+                <label for="spoilage-date">Spoilage Date:</label>
+                <input type="date" id="spoilage-date" name="spoilage-date" required>
+                <label for="quantity">Quantity Spoiled (grams):</label>
+                <input type="number" id="quantity" name="quantity" required>
+                <button type="submit">Report Spoilage</button>
+            </form>
+        </section>
+        <section class="container">
+            <h2>Reported Spoilage</h2>
+            <div id="reported-spoilage">
+                <!-- Reported spoilage will be displayed here -->
+            </div>
+        </section>
+    </main>
+    <div id="notification" class="notification hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
